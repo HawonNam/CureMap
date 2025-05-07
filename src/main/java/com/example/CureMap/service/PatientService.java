@@ -1,8 +1,8 @@
 package com.example.CureMap.service;
 
 import com.example.CureMap.domain.Patient;
-import com.example.CureMap.dto.PatientRequestDto;
-import com.example.CureMap.dto.PatientResponseDto;
+import com.example.CureMap.dto.patient.PatientRequestDto;
+import com.example.CureMap.dto.patient.PatientResponseDto;
 import com.example.CureMap.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

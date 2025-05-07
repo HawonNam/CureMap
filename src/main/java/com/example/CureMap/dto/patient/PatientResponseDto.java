@@ -1,13 +1,16 @@
-package com.example.CureMap.dto;
+package com.example.CureMap.dto.patient;
 
 import com.example.CureMap.domain.PatientStatus;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Getter
-public class PatientRequestDto {
+@Builder
+public class PatientResponseDto {
+    private Long id;
     private String name;
     private int age;
     private String gender;
@@ -18,3 +21,4 @@ public class PatientRequestDto {
     private LocalDate registrationDate;
     private PatientStatus status;
 }
+

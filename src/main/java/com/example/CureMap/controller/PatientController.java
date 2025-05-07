@@ -1,7 +1,7 @@
 package com.example.CureMap.controller;
 
-import com.example.CureMap.dto.PatientRequestDto;
-import com.example.CureMap.dto.PatientResponseDto;
+import com.example.CureMap.dto.patient.PatientRequestDto;
+import com.example.CureMap.dto.patient.PatientResponseDto;
 import com.example.CureMap.service.PatientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
