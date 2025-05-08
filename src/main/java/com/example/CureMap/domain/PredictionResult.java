@@ -20,6 +20,10 @@ public class PredictionResult {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
+    @ElementCollection
+    @CollectionTable(name = "suspicious_disease", joinColumns = @JoinColumn(name = "prediction_result_id"))
+    private List<SuspiciousDiesase> suspiciousDiesases = new ArrayList<>();
+
     private String antibioticName; //예측에 사용된 항생제 이름
 
     private Double successProbability; // 치료 성공 확률
