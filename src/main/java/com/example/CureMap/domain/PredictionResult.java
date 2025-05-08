@@ -22,7 +22,7 @@ public class PredictionResult {
 
     @ElementCollection
     @CollectionTable(name = "suspicious_disease", joinColumns = @JoinColumn(name = "prediction_result_id"))
-    private List<SuspiciousDiesase> suspiciousDiesases = new ArrayList<>();
+    private List<SuspiciousDisease> suspiciousDiseases = new ArrayList<>();
 
     private String antibioticName; //예측에 사용된 항생제 이름
 
@@ -33,5 +33,12 @@ public class PredictionResult {
 
     @OneToMany(mappedBy = "predictionResult", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AntibioticRecommendation> recommendations = new ArrayList<>();
+
+    @OneToMany(mappedBy = "predictionResult", cascade = CascadeType.ALL)
+    private List<DiseasePrediction> diseasePredictions;
+
+    @OneToMany(mappedBy = "predictionResult", cascade = CascadeType.ALL)
+    private List<OutcomeSimulation> outcomeSimulations;
+
 
 }

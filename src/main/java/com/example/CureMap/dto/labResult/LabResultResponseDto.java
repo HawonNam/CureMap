@@ -1,5 +1,4 @@
 package com.example.CureMap.dto.labResult;
-
 import com.example.CureMap.domain.LabResult;
 import lombok.Builder;
 import lombok.Getter;
@@ -7,7 +6,6 @@ import lombok.Getter;
 import java.time.LocalDate;
 
 @Getter
-@Builder
 public class LabResultResponseDto {
 
     private Long patientId;
@@ -25,4 +23,16 @@ public class LabResultResponseDto {
         this.testDate = entity.getTestDate();
         this.interpretation = entity.getInterpretation();
     }
+
+    @Builder
+    public LabResultResponseDto(Long patientId, String testName, String testValue,
+                                String unit, LocalDate testDate, String interpretation) {
+        this.patientId = patientId;
+        this.testName = testName;
+        this.testValue = testValue;
+        this.unit = unit;
+        this.testDate = testDate;
+        this.interpretation = interpretation;
+    }
+
 }

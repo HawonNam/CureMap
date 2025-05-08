@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SuspiciousDiesase {
+public class SuspiciousDisease {
     private String diseaseName;
     private Double probability;
 }

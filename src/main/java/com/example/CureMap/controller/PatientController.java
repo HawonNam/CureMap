@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping
+@RequestMapping("/api/patients")
 public class PatientController {
     private final PatientService patientService;
 
@@ -20,7 +20,7 @@ public class PatientController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PatientResponseDto> get(@PathVariable Long id) {
-        return ResponseEntity.ok(patientService.getPatient(id));
+    public PatientResponseDto get(@PathVariable Long id){
+        return patientService.getPatientById(id);
     }
 }

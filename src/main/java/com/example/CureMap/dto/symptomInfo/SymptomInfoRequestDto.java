@@ -1,10 +1,11 @@
 package com.example.CureMap.dto.symptomInfo;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Getter
+@Getter @Setter
 public class SymptomInfoRequestDto {
     private Long patientId;
     private String symptomName;

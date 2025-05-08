@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/antibiotics")
+@RequestMapping("")
 public class AntibioticRecommendationController {
     private final AntibioticRecommendationService recommendationService;
 

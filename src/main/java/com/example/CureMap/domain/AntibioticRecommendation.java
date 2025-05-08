@@ -14,6 +14,10 @@ public class AntibioticRecommendation {
     @Column
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
+
     private String antibioticName;     // 항생제 이름
     private Integer recommandRank;     // 추천 순위 (1, 2, 3위 등)
 

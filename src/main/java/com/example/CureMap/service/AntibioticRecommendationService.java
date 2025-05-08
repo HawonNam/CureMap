@@ -15,7 +15,7 @@ public class AntibioticRecommendationService {
     private final AntibioticRecommendationRepository recommendationRepository;
 
     public List<AntibioticRecommendationResponseDto> getRecommendationsByPredictionResult(Long predictionResultId) {
-        List<AntibioticRecommendation> list = recommendationRepository.findByPredictionResultIdOrderByRecommandRankAsc(predictionResultId);
+        List<AntibioticRecommendation> list = recommendationRepository.findByPredictionResultId(predictionResultId);
 
         return list.stream()
                 .map(AntibioticRecommendationResponseDto::new)

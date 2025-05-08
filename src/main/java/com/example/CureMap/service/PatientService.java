@@ -29,7 +29,7 @@ public class PatientService {
         return patientRepository.save(patient).getId();
     }
 
-    public PatientResponseDto getPatient(Long id) {
+    public PatientResponseDto getPatientById(Long id) {
         Patient patient = patientRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("환자를 찾을 수 없습니다."));
 
