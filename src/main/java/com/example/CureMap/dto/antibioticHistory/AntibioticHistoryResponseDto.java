@@ -12,7 +12,7 @@ public class AntibioticHistoryResponseDto {
     private LocalDate startDate;
     private LocalDate endDate;
     private String route;     // 투약 경로 (예: IV, PO)
-    private String does;      // 복용량
+    private String dose;      // 복용량
     private boolean currentUse; // 현재 복용 중 여부
 
     public AntibioticHistoryResponseDto(AntibioticHistory entity) {
@@ -21,7 +21,7 @@ public class AntibioticHistoryResponseDto {
         this.startDate = entity.getStartDate();
         this.endDate = entity.getEndDate();
         this.route = entity.getRoute();
-        this.does = entity.getDoes();
+        this.dose = entity.getDose();
         this.currentUse = entity.isCurrentUse();
     }
 }

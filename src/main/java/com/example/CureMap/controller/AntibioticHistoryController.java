@@ -1,14 +1,12 @@
 package com.example.CureMap.controller;
 
+import com.example.CureMap.dto.antibioticHistory.AntibioticHistoryRequestDto;
 import com.example.CureMap.dto.antibioticHistory.AntibioticHistoryResponseDto;
 import com.example.CureMap.service.AntibioticHistoryService;
 import com.example.CureMap.service.AntibioticRecommendationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +22,13 @@ public class AntibioticHistoryController {
         List<AntibioticHistoryResponseDto> result = historyService.getHistoryByPatientId(patientId);
         return ResponseEntity.ok(result);
     }
+
+    @PostMapping
+    public ResponseEntity<String> createHistory(@PathVariable("id") Long patientId,
+                                                @RequestBody AntibioticHistoryRequestDto dto) {
+        dto.setPatientId(patientId); // DTO에 환자 ID 주입
+        historyService.saveAntibioticHistory(dto);  // 저장 로직 호출
+        return ResponseEntity.ok("항생제 복용 이력이 저장되었습니다.");
+    }
+
 }

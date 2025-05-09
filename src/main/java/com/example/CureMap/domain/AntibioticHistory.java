@@ -24,6 +24,6 @@ public class AntibioticHistory {
     private LocalDate startDate;
     private LocalDate endDate;
     private String route;
-    private String does;
+    private String dose;
     private boolean currentUse;
 }
